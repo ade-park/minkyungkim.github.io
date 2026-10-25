@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minkyung KIM — Architecte Project Manager</title>
+<meta name="description" content="Minkyung KIM, architecte BIM et chargée de projet. Conception, coordination et suivi de chantier — data centers, tertiaire, IGH. / BIM architect and project lead.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f6f3; --surface:#ffffff; --ink:#1b2430; --muted:#5d6775; --line:#dedbd3;
+    --accent:#2f5d62; --accent-soft:#e4eeee;
+    --serif:"Newsreader", Georgia, "Times New Roman", serif;
+    --sans:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+  /* language switching */
+  body[data-lang="fr"] .en{display:none !important}
+  body[data-lang="en"] .fr{display:none !important}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:10;background:rgba(247,246,243,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+  .brand{font-weight:600;letter-spacing:.02em;color:var(--ink)}
+  .nav nav{display:flex;gap:20px;font-size:14px}
+  .nav nav a{color:var(--muted)}
+  .nav nav a:hover{color:var(--ink);text-decoration:none}
+  .lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-size:13px}
+  .lang button{border:0;background:transparent;padding:5px 12px;cursor:pointer;color:var(--muted);font:inherit}
+  .lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
+
+  /* hero */
+  .hero{padding:72px 0 56px}
+  .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 14px}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,7vw,68px);line-height:1.05;margin:0 0 20px;letter-spacing:-.01em}
+  .lead{font-size:clamp(18px,2.4vw,21px);color:var(--muted);max-width:660px;margin:0 0 28px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-block;padding:11px 20px;border-radius:8px;font-weight:500;font-size:15px;border:1px solid var(--ink)}
+  .btn.primary{background:var(--ink);color:#fff}
+  .btn.primary:hover{text-decoration:none;background:#000}
+  .btn.ghost{color:var(--ink)}
+  .btn.ghost:hover{background:var(--surface);text-decoration:none}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px;border-top:1px solid var(--line);padding-top:28px}
+  .stat b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(26px,4vw,36px);line-height:1.1}
+  .stat > span{font-size:14px;color:var(--muted)}
+
+  /* sections */
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4vw,36px);margin:0 0 28px;letter-spacing:-.005em}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px}
+  .card h3{margin:0 0 10px;font-size:17px}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+  .edu-row{display:grid;grid-template-columns:200px 1fr;gap:4px 32px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .edu-row:first-child{padding-top:0}
+  .edu-row .when{font-size:14px;color:var(--muted)}
+  .edu-row h3{margin:0 0 4px;font-size:17px}
+  .edu-row p{margin:0;color:var(--muted);font-size:15px}
+  @media (max-width:760px){.edu-row{grid-template-columns:1fr}}
+
+  /* timeline */
+  .job{display:grid;grid-template-columns:200px 1fr;gap:12px 32px;padding:28px 0;border-bottom:1px solid var(--line)}
+  .job:first-of-type{padding-top:0}
+  .job .when{font-size:14px;color:var(--muted)}
+  .job h3{margin:0;font-size:19px}
+  .job .role{color:var(--accent);font-weight:500;margin:2px 0 14px}
+  .proj{margin:0 0 16px}
+  .proj strong{display:block;font-weight:600;font-size:15px}
+  .proj .meta{display:inline-block;font-size:12.5px;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:2px 10px;margin:4px 0 6px}
+  ul{margin:6px 0 0;padding-left:18px}
+  li{margin:3px 0;font-size:15px}
+  .earlier{padding-top:28px}
+  .earlier li{color:var(--muted)}
+  .earlier li b{color:var(--ink);font-weight:500}
+  .note{font-size:13px;color:var(--muted);margin-top:24px}
+
+  /* skills */
+  .skillcol h3{font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 12px;font-weight:600}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+  .tag{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 13px;font-size:14px}
+  .skills3{display:grid;grid-template-columns:1.2fr 1.2fr .8fr;gap:32px}
+
+  /* contact */
+  .contact{background:var(--ink);color:#fff;border-top:0;margin-top:24px}
+  .contact h2{color:#fff}
+  .contact p{color:#c4cbd4;max-width:560px}
+  .contact a{color:#fff;border-bottom:1px solid rgba(255,255,255,.4)}
+  .contact a:hover{text-decoration:none;border-color:#fff}
+  .links{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:20px;font-size:17px}
+  footer{padding:24px 0;font-size:13px;color:var(--muted);text-align:center}
+
+  @media (max-width:760px){
+    .nav nav{display:none}
+    .hero{padding:48px 0 40px}
+    .stats{grid-template-columns:1fr;gap:18px}
+    .grid2,.skills3{grid-template-columns:1fr}
+    .job{grid-template-columns:1fr;gap:4px}
+    section{padding:44px 0}
+  }
+  @media print{header.nav,.cta{display:none}body{background:#fff}.card,.tag{border-color:#ccc}.contact{background:#fff;color:#000}.contact h2,.contact a,.contact p{color:#000}}
+</style>
+</head>
+<body data-lang="fr">
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">M. KIM</a>
+    <nav>
+      <a href="#about"><span class="fr">À propos</span><span class="en">About</span></a>
+      <a href="#experience"><span class="fr">Expérience</span><span class="en">Experience</span></a>
+      <a href="#skills"><span class="fr">Compétences</span><span class="en">Skills</span></a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set="fr" aria-pressed="true">FR</button>
+      <button type="button" data-set="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <p class="eyebrow"><span class="fr">Architecte BIM · Chargée de projet</span><span class="en">BIM Architect · Project Manager</span></p>
+    <h1>Minkyung KIM</h1>
+    <p class="lead">
+      <span class="fr">Architecte avec plus de quinze ans de pratique, du permis de construire au suivi de chantier. Je relie la conception, la maquette BIM et l’exécution sur des projets complexes : data centers, tours de bureaux IGH, équipements et logements.</span>
+      <span class="en">Architect with over fifteen years of practice, from building permit to construction supervision. I connect design, the BIM model and execution on complex projects: data centers, high-rise (IGH) office towers, public facilities and housing.</span>
+    </p>
+    <div class="cta">
+      <a class="btn primary" href="#contact"><span class="fr">Me contacter</span><span class="en">Get in touch</span></a>
+      <a class="btn ghost" href="#experience"><span class="fr">Voir mon parcours</span><span class="en">View my experience</span></a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>15+</b><span class="fr">années de pratique en agence</span><span class="en">years of practice in architecture firms</span></div>
+      <div class="stat"><b>63 000 m²</b><span class="fr">plus grand projet : Tour ADRIA, La Défense</span><span class="en">largest project: Tour ADRIA, La Défense</span></div>
+      <div class="stat"><b><span class="fr">Conception → Chantier</span><span class="en">Design → Site</span></b><span class="fr">BIM 1 &amp; BIM 2, Revit &amp; Dynamo</span><span class="en">BIM 1 &amp; BIM 2, Revit &amp; Dynamo</span></div>
+    </div>
+  </div>
+
+  <!-- ABOUT / GOALS -->
+  <section id="about">
+    <h2><span class="fr">Ce que je recherche</span><span class="en">What I’m looking for</span></h2>
+    <!-- TODO: adapter ce texte à votre objectif réel / adapt this text to your real goals -->
+    <div class="grid2">
+      <div class="card">
+        <h3><span class="fr">Une position à l’interface conception / chantier</span><span class="en">A role at the design / site interface</span></h3>
+        <p>
+          <span class="fr">Poursuivre sur des projets de grande envergure en tant que chargée de projet ou architecte référente, en gardant un pied dans la conception et un dans l’exécution.</span>
+          <span class="en">To keep working on large-scale projects as project lead or lead architect, with one foot in design and the other in execution.</span>
+        </p>
+      </div>
+      <div class="card">
+        <h3><span class="fr">Coordination, qualité et BIM</span><span class="en">Coordination, quality and BIM</span></h3>
+        <p>
+          <span class="fr">Contribuer à la cohérence entre maquette, plans et documents d’exécution, et faire dialoguer maîtrise d’ouvrage, bureaux d’études et entreprises.</span>
+          <span class="en">To ensure consistency between model, drawings and execution documents, and to keep clients, engineers and contractors aligned.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2><span class="fr">Expérience</span><span class="en">Experience</span></h2>
+
+    <article class="job">
+      <div class="when"><span class="fr">Oct. 2023 – Aujourd’hui</span><span class="en">Oct 2023 – Present</span></div>
+      <div>
+        <h3>Reid Brewin Architectes</h3>
+        <p class="role"><span class="fr">Architecte BIM / Chargée de projet</span><span class="en">BIM Architect / Project Lead</span></p>
+        <div class="proj">
+          <strong>Data Center PAR2 — Villebon-sur-Yvette (91)</strong>
+          <span class="meta"><span class="fr">Construction neuve · en chantier</span><span class="en">New build · under construction</span></span>
+          <ul class="fr">
+            <li>Conception et production des dossiers PC, PRO et DCE en environnement BIM 2 ; gestion et mise à jour de la maquette Revit.</li>
+            <li>Suivi architectural et technique du chantier avec la maîtrise d’ouvrage, les bureaux d’études et les entreprises ; participation aux réunions de chantier et de coordination.</li>
+            <li>VISA des documents d’exécution : conformité aux plans architecturaux, au CCTP et aux pièces contractuelles ; vérification des détails, échantillons et caractéristiques des ouvrages.</li>
+            <li>Analyse et suivi des RFI, FTM et demandes techniques jusqu’à leur résolution ; identification des non-conformités et suivi de leur prise en compte.</li>
+            <li>Room Readiness : suivi des points bloquants, des réserves et des actions correctives avant l’installation des équipements.</li>
+            <li>Suivi documentaire et des remarques avec Autodesk Construction Cloud (ACC) et Dalux.</li>
+          </ul>
+          <ul class="en">
+            <li>Design and production of building permit (PC), detailed design (PRO) and tender (DCE) packages in a BIM level 2 environment; management and updating of the Revit model.</li>
+            <li>Architectural and technical construction supervision with the client, engineering consultants and contractors; attendance at site and coordination meetings.</li>
+            <li>Review (VISA) of execution documents: compliance with architectural drawings, technical specifications (CCTP) and contract documents; checking of details, samples and proposed products.</li>
+            <li>Analysis and follow-up of RFIs, FTMs and technical queries through to resolution; identification of non-conformities and tracking of corrective actions.</li>
+            <li>Room Readiness: tracking of blocking points, punch-list items and corrective actions ahead of equipment installation.</li>
+            <li>Document and snag tracking with Autodesk Construction Cloud (ACC) and Dalux.</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when"><span class="fr">Nov. 2021 – Avr. 2023</span><span class="en">Nov 2021 – Apr 2023</span></div>
+      <div>
+        <h3>ORY Architecture</h3>
+        <p class="role"><span class="fr">Architecte chargée de projet BIM</span><span class="en">BIM Project Architect</span></p>
+        <div class="proj">
+          <strong><span class="fr">Restructuration et extension d’une école supérieure — Paris 13e</span><span class="en">Restructuring and extension of a higher-education school — Paris 13th</span></strong>
+          <span class="meta"><span class="fr">SDP 4 326 m² · BIM 2</span><span class="en">4,326 m² · BIM 2</span></span>
+          <ul class="fr"><li>Dossiers APS, PC, APD, PRO et DCE ; interlocutrice principale de la maîtrise d’ouvrage sur les sujets architecturaux ; production et coordination des pièces graphiques sous Revit.</li></ul>
+          <ul class="en"><li>Schematic design, permit, detailed design and tender packages (APS, PC, APD, PRO, DCE); main point of contact for the client on architectural matters; production and coordination of drawings in Revit.</li></ul>
+        </div>
+        <div class="proj">
+          <strong><span class="fr">Hôtel 5 étoiles — Méribel-les-Allues (73)</span><span class="en">5-star hotel — Méribel-les-Allues (73)</span></strong>
+          <span class="meta"><span class="fr">SDP 12 110 m² · BIM 1</span><span class="en">12,110 m² · BIM 1</span></span>
+          <ul class="fr"><li>Élaboration du dossier APD2 ; contribution au développement architectural.</li></ul>
+          <ul class="en"><li>Preparation of the APD2 detailed preliminary design package; contribution to architectural development.</li></ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when"><span class="fr">Oct. 2019 – Avr. 2021</span><span class="en">Oct 2019 – Apr 2021</span></div>
+      <div>
+        <h3>Atelier 2/3/4</h3>
+        <p class="role"><span class="fr">Architecte BIM référent</span><span class="en">Lead BIM Architect</span></p>
+        <div class="proj">
+          <strong><span class="fr">Réhabilitation et extension de la Tour ADRIA — La Défense</span><span class="en">Refurbishment and extension of Tour ADRIA — La Défense</span></strong>
+          <span class="meta"><span class="fr">SDP 63 000 m² · BIM 1</span><span class="en">63,000 m² · BIM 1</span></span>
+          <ul class="fr"><li>Dossiers APS et PC / PC IGH ; création et gestion de la maquette Revit ; pièces spécifiques à la réglementation IGH.</li></ul>
+          <ul class="en"><li>APS and PC / PC IGH packages; creation and management of the Revit model; documents specific to high-rise (IGH) regulations.</li></ul>
+        </div>
+        <div class="proj">
+          <strong><span class="fr">Réhabilitation et extension de la Tour CB3 — La Défense</span><span class="en">Refurbishment and extension of Tour CB3 — La Défense</span></strong>
+          <span class="meta"><span class="fr">SDP 49 650 m² · BIM 1</span><span class="en">49,650 m² · BIM 1</span></span>
+          <ul class="fr"><li>Dossiers APD et PCM ; automatisation du calcul des surfaces des compartiments avec Dynamo.</li></ul>
+          <ul class="en"><li>APD and PCM packages; automated compartment area calculations with Dynamo.</li></ul>
+        </div>
+        <div class="proj">
+          <strong><span class="fr">Reconstruction du CDFAS — Eaubonne (95)</span><span class="en">Reconstruction of the CDFAS — Eaubonne (95)</span></strong>
+          <span class="meta"><span class="fr">SDP 5 320 m² · BIM 1</span><span class="en">5,320 m² · BIM 1</span></span>
+          <ul class="fr"><li>Dossiers APD ; automatisation du calcul des surfaces des chambres avec Dynamo.</li></ul>
+          <ul class="en"><li>APD package; automated room area calculations with Dynamo.</li></ul>
+        </div>
+        <div class="proj">
+          <strong><span class="fr">Cité administrative de Mayotte</span><span class="en">Administrative City of Mayotte</span></strong>
+          <ul class="fr"><li>Participation aux études de concours.</li></ul>
+          <ul class="en"><li>Contribution to competition studies.</li></ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when"><span class="fr">Mars 2018 – Sept. 2019</span><span class="en">Mar 2018 – Sep 2019</span></div>
+      <div>
+        <h3>Wilmotte &amp; Associés</h3>
+        <p class="role"><span class="fr">Architecte assistante de projet</span><span class="en">Assistant Project Architect</span></p>
+        <div class="proj">
+          <strong><span class="fr">Institut de Recherche Servier — Paris-Saclay, Gif-sur-Yvette (91)</span><span class="en">Servier Research Institute — Paris-Saclay, Gif-sur-Yvette (91)</span></strong>
+          <span class="meta"><span class="fr">SDP 46 000 m² · BIM 2</span><span class="en">46,000 m² · BIM 2</span></span>
+          <ul class="fr"><li>Dossiers APD, PRO, PCM et marché ; coordination des documents du projet.</li></ul>
+          <ul class="en"><li>APD, PRO, PCM and contract packages; coordination of project documents.</li></ul>
+        </div>
+        <div class="proj">
+          <strong><span class="fr">Centre d’entraînement du Paris Saint-Germain — Poissy (78)</span><span class="en">Paris Saint-Germain Training Center — Poissy (78)</span></strong>
+          <span class="meta"><span class="fr">SDP 46 261 m² · BIM 1</span><span class="en">46,261 m² · BIM 1</span></span>
+          <ul class="fr"><li>Dossiers PRO et DCE.</li></ul>
+          <ul class="en"><li>PRO and DCE packages.</li></ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when"><span class="fr">Sept. 2016 – Févr. 2018</span><span class="en">Sep 2016 – Feb 2018</span></div>
+      <div>
+        <h3>SEURA Architectes</h3>
+        <p class="role"><span class="fr">Architecte chargée de projet</span><span class="en">Project Architect</span></p>
+        <ul class="fr">
+          <li><b>Nanterre (92)</b> — logements, résidences étudiantes et commerces, 13 838 m² : PCM, PLV, DCE en BIM 1.</li>
+          <li><b>Toulouse Montaudran Aerospace (31)</b> — bâtiments neufs en ZAC, 9 166 m² : PLV et PRO en BIM 1.</li>
+          <li><b>Montigny-lès-Cormeilles (95)</b> — logements, 5 656 m² : PC, PLV et DCE en BIM 1.</li>
+        </ul>
+        <ul class="en">
+          <li><b>Nanterre (92)</b> — housing, student residences and retail, 13,838 m²: PCM, PLV, DCE in BIM 1.</li>
+          <li><b>Toulouse Montaudran Aerospace (31)</b> — new buildings in a ZAC development, 9,166 m²: PLV and PRO in BIM 1.</li>
+          <li><b>Montigny-lès-Cormeilles (95)</b> — housing, 5,656 m²: PC, PLV and DCE in BIM 1.</li>
+        </ul>
+      </div>
+    </article>
+
+    <div class="job earlier" style="border-bottom:0">
+      <div class="when"><span class="fr">2009 – 2016</span><span class="en">2009 – 2016</span></div>
+      <div>
+        <h3><span class="fr">Expériences antérieures</span><span class="en">Earlier experience</span></h3>
+        <ul class="fr">
+          <li><b>Agence SATHY</b> (2016) — concours pour un immeuble de logements à Saint-Ouen-l’Aumône (95).</li>
+          <li><b>Daquin &amp; Ferrière Architecture</b> (2012) — DCE et PRO de logements collectifs à Bobigny et Nanterre ; étude urbaine du Parc du Vélodrome, Aulnay-sous-Bois.</li>
+          <li><b>Reichen et Robert &amp; Associés</b> (2012) — APD et PRO pour la gare du Sud à Nice ; études de réaménagement urbain à Paris et Montpellier.</li>
+          <li><b>Atelier d’Architecture Marjolijn &amp; Pierre Boudry</b> (2009–2011) — études ESQ à DCE pour équipements publics, logements et réhabilitation ; suivi d’exécution, DOE et OPR de la Maison Rouge, Ivry-sur-Seine (94).</li>
+        </ul>
+        <ul class="en">
+          <li><b>Agence SATHY</b> (2016) — competition for a housing building in Saint-Ouen-l’Aumône (95).</li>
+          <li><b>Daquin &amp; Ferrière Architecture</b> (2012) — DCE and PRO for collective housing in Bobigny and Nanterre; urban study of Parc du Vélodrome, Aulnay-sous-Bois.</li>
+          <li><b>Reichen et Robert &amp; Associés</b> (2012) — APD and PRO for the Gare du Sud in Nice; urban redevelopment studies in Paris and Montpellier.</li>
+          <li><b>Atelier d’Architecture Marjolijn &amp; Pierre Boudry</b> (2009–2011) — design to tender studies for public facilities, housing and refurbishment; site follow-up, as-built files and pre-handover inspections (OPR) for Maison Rouge, Ivry-sur-Seine (94).</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="note">
+      <span class="fr">PC : permis de construire · APS/APD : avant-projet sommaire/détaillé · PRO : projet · DCE : dossier de consultation des entreprises · VISA : visa des documents d’exécution · IGH : immeuble de grande hauteur.</span>
+      <span class="en">PC: building permit · APS/APD: preliminary / detailed design · PRO: technical design · DCE: tender documents · VISA: review of execution documents · IGH: high-rise building regulations.</span>
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2><span class="fr">Compétences</span><span class="en">Skills</span></h2>
+    <div class="skills3">
+      <div class="skillcol">
+        <h3><span class="fr">Chantier &amp; MOEX</span><span class="en">Site &amp; construction management</span></h3>
+        <div class="tags fr">
+          <span class="tag">Suivi de chantier</span><span class="tag">VISA</span><span class="tag">RFI / FTM</span><span class="tag">Conformité CCTP</span><span class="tag">Coordination entreprises</span><span class="tag">Non-conformités</span><span class="tag">Room Readiness</span>
+        </div>
+        <div class="tags en">
+          <span class="tag">Site supervision</span><span class="tag">Document review (VISA)</span><span class="tag">RFI / FTM</span><span class="tag">Specification compliance</span><span class="tag">Contractor coordination</span><span class="tag">Non-conformities</span><span class="tag">Room Readiness</span>
+        </div>
+      </div>
+      <div class="skillcol">
+        <h3><span class="fr">BIM &amp; conception</span><span class="en">BIM &amp; design</span></h3>
+        <div class="tags fr">
+          <span class="tag">Maquettes Revit</span><span class="tag">BIM 1 / BIM 2</span><span class="tag">Cohérence maquette / plans</span><span class="tag">Dynamo</span><span class="tag">PC · APS · APD · PRO · DCE</span>
+        </div>
+        <div class="tags en">
+          <span class="tag">Revit models</span><span class="tag">BIM 1 / BIM 2</span><span class="tag">Model-to-drawing consistency</span><span class="tag">Dynamo</span><span class="tag">PC · APS · APD · PRO · DCE</span>
+        </div>
+      </div>
+      <div class="skillcol">
+        <h3><span class="fr">Outils</span><span class="en">Tools</span></h3>
+        <div class="tags">
+          <span class="tag">Revit</span><span class="tag">Autodesk Construction Cloud</span><span class="tag">Dalux</span><span class="tag">Dynamo</span><span class="tag">AutoCAD</span>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:24px"><span class="fr">Formation</span><span class="en">Education</span></h2>
+    <div class="edu">
+      <div class="edu-row">
+        <div class="when">Sept. 2010</div>
+        <div>
+          <h3><span class="fr">HMONP — Habilitation à l’exercice de la maîtrise d’œuvre en son nom propre</span><span class="en">HMONP — Authorization to practise architecture in one’s own name</span></h3>
+          <p>École nationale supérieure d’architecture de Paris-Belleville</p>
+        </div>
+      </div>
+      <div class="edu-row">
+        <div class="when"><span class="fr">Juil. 2009</span><span class="en">Jul 2009</span></div>
+        <div>
+          <h3><span class="fr">Architecte diplômée d’État (DE)</span><span class="en">State-Certified Architect (DE)</span></h3>
+          <p>
+            <span class="fr">École nationale supérieure d’architecture de Paris-Belleville · Projet de diplôme : Centre civique à Ivry-sur-Seine · Mention très bien</span>
+            <span class="en">École nationale supérieure d’architecture de Paris-Belleville · Diploma project: Civic center in Ivry-sur-Seine · Highest honors (mention très bien)</span>
+          </p>
+        </div>
+      </div>
+      <div class="edu-row">
+        <div class="when"><span class="fr">Sept. 2006</span><span class="en">Sep 2006</span></div>
+        <div>
+          <h3><span class="fr">Diplôme de licence en architecture</span><span class="en">Bachelor’s degree (Licence) in architecture</span></h3>
+          <p>École nationale supérieure d’architecture de Paris-Belleville</p>
+        </div>
+      </div>
+      <div class="edu-row">
+        <div class="when">1999 – 2004</div>
+        <div>
+          <h3><span class="fr">Diplôme national d’ingénieur en architecture</span><span class="en">National Engineering Degree in Architecture</span></h3>
+          <p><span class="fr">Université, Corée du Sud (2004)</span><span class="en">University, South Korea (2004)</span></p>
+        </div>
+      </div>
+      <div class="edu-row">
+        <div class="when">2005</div>
+        <div>
+          <h3><span class="fr">Correspondante pour une revue d’architecture coréenne</span><span class="en">Correspondent for a Korean architecture magazine</span></h3>
+          <p><span class="fr">Corée du Sud</span><span class="en">South Korea</span></p>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:40px"><span class="fr">Langues</span><span class="en">Languages</span></h2>
+    <div class="tags">
+      <span class="tag"><span class="fr">Coréen</span><span class="en">Korean</span></span>
+      <span class="tag"><span class="fr">Français</span><span class="en">French</span></span>
+      <span class="tag"><span class="fr">Anglais</span><span class="en">English</span></span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap" style="padding:0">
+      <h2><span class="fr">Travaillons ensemble</span><span class="en">Let’s work together</span></h2>
+      <p>
+        <span class="fr">Un projet, une opportunité ou simplement une question ? Écrivez-moi.</span>
+        <span class="en">A project, an opportunity or simply a question? Get in touch.</span>
+      </p>
+      <div class="links">
+        <a href="mailto:ade.park@gmail.com">ade.park@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer>© <span id="y">2026</span> Minkyung KIM</footer>
+
+<script>
+(function(){
+  var body=document.body, buttons=document.querySelectorAll('.lang button');
+  function set(l){
+    body.setAttribute('data-lang',l);
+    document.documentElement.lang=l;
+    buttons.forEach(function(b){b.setAttribute('aria-pressed', b.dataset.set===l ? 'true':'false')});
+    document.title = l==='fr' ? 'Minkyung KIM — Architecte Project Manager' : 'Minkyung KIM — Architect & Project Manager';
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
+  var initial = saved || ((navigator.language||'fr').toLowerCase().indexOf('fr')===0 ? 'fr':'en');
+  set(initial);
+  buttons.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+  document.getElementById('y').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
